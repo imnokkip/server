@@ -1,8 +1,8 @@
 import socket, threading
 player = 1
 sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-ip = '172.31.128.11'
-port = 12333
+ip = ''
+port = 62333
 error = '0'
 sock.bind((ip, port))
 print('server started, ERRORS = ', error)
@@ -30,3 +30,5 @@ while True:
 		user, adres = sock.accept()
 		newtheard = clientTh(adres, user)
 		newtheard.start()
+
+ipw = socket.gethostbyname_ex(socket.gethostname())[2]
